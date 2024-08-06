@@ -1,23 +1,8 @@
 SET search_path TO staging;
 
-UPDATE parts
-SET
-name = new_parts.name,
-part_num = new_parts.part_num,
-part_cat_id = new_parts.part_cat_id
-FROM
-new_parts
-WHERE
-parts.part_num = new_parts.part_num;
-
-select * from parts
-inner join inventory_parts on parts.part_num = inventory_parts.part_num;
-
 --Relationship between colours and inventory_parts
 ALTER TABLE colours ADD PRIMARY KEY (id);
 ALTER TABLE inventory_parts ADD FOREIGN KEY (color_id) REFERENCES colours(id);
-
-
 
 --Relationship between inv_parts and inventories
 ALTER TABLE inventories ADD PRIMARy KEY (id);
@@ -33,13 +18,14 @@ ALTER TABLE inventory_sets ADD FOREIGN KEY (set_num) REFERENCES sets(set_num);
 --RELATIONSHIP BETWEEN SETS AND INVENTORIES
 ALTER TABLE inventories ADD FOREIGN KEY (set_num) REFERENCES sets(set_num);
 
---RELATIONSHIP BETWEEN THEMESE AND SETS
+--RELATIONSHIP BETWEEN THEMES AND SETS
 ALTER TABLE themes ADD PRIMARY KEY (id);
 ALTER TABLE sets ADD FOREIGN KEY (theme_id) REFERENCES themes(id);
 
 
 --Found that there were part_nums in inventory_parts that where not in parts table, so could not set up the foreign key
 --To combat, i updated the parts table by inserting into the parts table the part_nums from inventory, keeping name and part_cat as NULL
+
 INSERT INTO parts (part_num, name, part_cat_id)
 SELECT
 ip.part_num,
