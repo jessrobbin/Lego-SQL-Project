@@ -13,7 +13,7 @@ Lego Data Challenge in PostgresQL
 
 
 ## Outcomes
-Script here for creating schema, tables and inserting data.
+[Script here](https://github.com/jessrobbin/Lego-SQL-Project/blob/main/Creating%20Tables%20and%20Inserting%20Data.sql) for creating schema, tables and inserting data.
 
 [Script here](https://github.com/jessrobbin/Lego-SQL-Project/blob/main/Setting%20Primary%20and%20Foreign%20Keys.sql) for setting primary and foreign keys.
 
