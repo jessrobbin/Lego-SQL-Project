@@ -27,7 +27,7 @@ Lego Data Challenge in PostgresQL
 ER diagram created:
 ![Lego Schema](https://github.com/user-attachments/assets/a7d5d442-ad63-4f4b-9872-2df2c111d085)
 
-[Script here ]([https://github.com/jessrobbin/Lego-SQL-Project/blob/main/Preparing%20Data%20For%20Analysis.sql]) for creating view for analysis.
+[Script here ](https://github.com/jessrobbin/Lego-SQL-Project/blob/main/Preparing%20Data%20For%20Analysis.sql) for creating view for analysis.
 
 I decided to look into the Branded vs Unbranded Lego Sets, particually Lego Star Wars.
 
